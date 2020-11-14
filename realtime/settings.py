@@ -126,7 +126,7 @@ ASGI_APPLICATION = 'realtime.routing.application'  # Usando ASGI, pois WSGI não
 #Realizando a configuração do banco de dados REDIS em realtime
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelsLayer',
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
             'hosts': [('127.0.0.1', 6379)]
         },

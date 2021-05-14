@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from django.utils.safestring import mark_safe #
+from django.utils.safestring import mark_safe  #
 import json
 
 
@@ -12,8 +12,9 @@ class SalaView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(SalaView, self).get_context_data(**kwargs)
-        #Aqui será transformado o nome da sala em JSON
+        # Aqui será transformado o nome da sala em JSON
         context['nome_sala_json'] = mark_safe(
-            json.dumps(self.kwargs['nome_sala']) #Responsavel por verificar a string, se não contém nenhum dado malicioso
+            json.dumps(self.kwargs['nome_sala'])
+            # Responsavel por verificar a string, se não contém nenhum dado malicioso
         )
         return context
